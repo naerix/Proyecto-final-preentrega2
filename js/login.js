@@ -8,7 +8,7 @@ function login(){
     for(let i = 0; i<RegUsuarios.length;i++){
         if(user === RegUsuarios[i].nombre && password === RegUsuarios[i].contraseña){
             alert("Ha iniciado sesion correctamente");
-
+            
         }
 
         else{
