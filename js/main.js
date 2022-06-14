@@ -25,7 +25,7 @@ function registro(){
 
     localStorage.setItem("RegUsuarios",JSON.stringify(UsuariosRegistrados));
 
-    alert("registro exitoso, por favor inicie sesion");
+    alerta();
     window.location="login.html"
 }
 
@@ -37,3 +37,13 @@ btnReg.addEventListener("click", () =>{
     event.preventDefault();
     registro();
 })
+
+
+function alerta(){
+    Swal.fire({
+        title: 'Registro Exitoso!',
+        text: 'Por favor inicie sesion',
+        incon: 'sucess',
+        confirmButtonText: 'Ok'
+    })
+}
