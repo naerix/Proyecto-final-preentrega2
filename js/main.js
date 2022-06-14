@@ -26,7 +26,6 @@ function registro(){
     localStorage.setItem("RegUsuarios",JSON.stringify(UsuariosRegistrados));
 
     alerta();
-    window.location="login.html"
 }
 
 const btnReg = document.getElementById("reg");
@@ -44,6 +43,15 @@ function alerta(){
         title: 'Registro Exitoso!',
         text: 'Por favor inicie sesion',
         incon: 'sucess',
-        confirmButtonText: 'Ok'
+        confirmButtonText: 'Iniciar Sesion',
+        cancelButtonText: 'Cancelar',
+        showCancelButton: true
+    }).then((result)=>{
+        if(result.isConfirmed){
+            window.location="login.html"
+        }
+        else{
+            window.location="../index.html"
+        }
     })
 }

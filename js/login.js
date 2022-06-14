@@ -7,12 +7,12 @@ function login(){
 
     for(let i = 0; i<RegUsuarios.length;i++){
         if(user === RegUsuarios[i].usuario && password === RegUsuarios[i].contraseña){
-            alert("Ha iniciado sesion correctamente");
+            alerta2()
             
         }
 
         else{
-            alert("usuario o contraseña incorrectos, por favor intente nuevamente!")
+            alertainorrecta()
         }
     }
 }
@@ -23,3 +23,25 @@ iniciarsession.addEventListener("click", () =>{
     event.preventDefault();
     login();
 })
+
+
+function alerta2(){
+    Swal.fire({
+        title: 'Has iniciado sesion corectamente!',
+        incon: 'sucess',
+    }).then((result)=>{
+        if(result.isConfirmed){
+            window.location="perfildeusuario.html"
+        }
+    })
+}
+
+function alertainorrecta(){
+    Toastify({
+        text: "Usuario o contraseña incorrectos",
+        duation: 4000 ,
+        gravity: 'center',
+        position:'center',
+        style:{ background: '#FE4949' }
+    }).showToast();
+}
